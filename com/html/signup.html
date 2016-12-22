@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>signup</title>
+		<link rel="stylesheet" href="../css/css.css" />
+		<script type="text/javascript" src="../js/Calendar.js"></script>
+		<script type="text/javascript" src="../js/signUpTest.js" ></script>
+		<script type="text/javascript">
+			var cal = new Calendar("cal");
+			document.write(cal);
+		</script>
+	</head>
+
+	<body>
+		<div class="header"></div>
+		<div class="content">
+			<div id="content">
+				<div class="crumbs">
+					您现在的位置：
+					<a href="">客运首页</a>
+					&nbsp;&gt;&nbsp;
+					<a href="">注册</a>
+				</div>
+				<div class="signup">
+					<div class="signup_header">
+						<div class="title">账户信息</div>
+					</div>
+					<div class="signup_body">
+						<ul style="list-style: none;">
+							<li class="tips">
+								注：标有<span class="star">*</span>处，均为必填项
+								<br /> <br />
+								<font style="color: #FF8000;padding-top: 3px;">登录信息：</font>
+							</li>
+							<li class="uname">
+								<span class="star">*</span> 用 户 名：
+								<input id="username" type="text" name="username" style="width: 200px;height: 30px;" placeholder="用户名设置成功后不可修改">
+								<span id = "hintUsername">
+									<font  size="2" style="color:#FF7F00">6-30位字母、数字或“_”,字母开头</font>
+								</span>
+								<script type="text/javascript" src="../js/checkUsername.js">
+								</script>
+							</li>
+							<li class="passwd">
+								<span class="star">*</span> 登录密码：
+								<input type="text" id="PWD" name="password" style="width: 200px;height: 30px;" placeholder="6-20位字母、数字或字符" onKeyUp="pwStrength(this.value);" onblur="pwStrength(this.value);">
+								<table style="width:180px;height:10px;" border="1" cellspacing="1" cellpadding="4" bordercolor="white" style="display:inline;" class="pwdstrenth">
+									<tr align="center">
+										<td width="33%" id="strength_L"></td>
+										<td width="33%" id="strength_M"></td>
+										<td width="33%" id="strength_H"></td>
+									</tr>
+								</table>
+								<script type="text/javascript" src="../js/judgePWD.js"></script>
+							</li>
+							<li class="comfirmPasswd">
+								<span class="star">*</span> 确认密码：
+								<input type="text" id="comfirmPWD" name="password" style="width: 200px;height: 30px;" placeholder="再次输入您的登录密码">
+							</li>
+							<li class="detail">
+								<span class="detailInfo">详细信息：</span>
+							</li>
+							<li class="realName">
+								<span class="star">*</span> 真实姓名：
+								<input type="text" id="realName" name="realName" style="width: 200px;height: 30px;" placeholder="请输入姓名">
+								<span>
+							<font size = "2" style = "color:#FF7F00">
+								<a style = "color:#FF7F00;text-decoraton:underline;" shape = "rect">姓名填写规则</a>
+							</font>
+						</span>
+							</li>
+							<li class="Sex">
+								<span class="star">*</span> &nbsp;&nbsp;性&nbsp;&nbsp;别：
+								<input type="radio" name="sex" id="male" value="0" checked="checked" />男
+								<input type="radio" name="sex" id="female" value="1" />女
+							</li>
+							<li class="cityCheck">
+								<span class="star">*</span> &nbsp;&nbsp;省&nbsp;&nbsp;份：
+								<select id="province" style="width: 100px;height: 30px;" onchange="selectprovince(this);">
+									<option value="请选择省份">请选择省份</option>
+									<!--<option value="广东">广东</option>
+									<option value="江西">江西</option>
+									<option value="福建">福建</option>
+									<option value="湖南">湖南</option>-->
+								</select>
+								城 市：
+								<select id="city" runat="server" style="width: 100px;height: 30px;">
+									<option value="请选择城市">请选择城市</option>
+									<!--<option value="南昌">南昌</option>
+									<option value="赣州">赣州</option>
+									<option value="九江">九江</option>
+									<option value="吉安">吉安</option>-->
+								</select>
+								<!--<script type="text/javascript" language="JavaScript" src="../js/selectprovince.js"></script>-->
+								<script type="text/javascript" language="JavaScript" src="../js/province2city.js"></script>
+							</li>
+							<li class="IDType">
+								<span class="star">*</span> 证件类型：
+								<select style="width: 200px;height: 30px;" id="IDType">
+									<option value="二代身份证">二代身份证</option>
+									<option value="护照">护照</option>
+									<option value="港澳通行证">港澳通行证</option>
+									<option value="台湾通行证">台湾通行证</option>
+								</select>
+							</li>
+							<li class="IDNumber">
+								<span class="star">*</span> 证件号码：
+								<input type="text" id="IDNumber" name="IDNumber" style="width: 200px;height: 30px;" placeholder="请输入您的证件号码">
+							</li>
+							<li class="bornNumber">
+								<span class="star">*</span> 出生日期：
+								<input type="text" id="calendar" name="bornNumber" style="width: 200px;height: 30px;" placeholder="请输入您的出生日期"
+									onfocus="cal.show(this)" onclick="cal.show(this,cal,getObjById('calendar'))">
+							</li>
+							<li class="VisitorType">
+								<span class="star">*</span> 用户类型：
+								<select style="width: 200px;height: 30px;">
+									<option value="成人">成人</option>
+									<option value="儿童">儿童</option>
+									<option value="学生">学生</option>
+									<option value="残疾军人、伤残人民警察">残疾军人、伤残人民警察</option>
+								</select>
+							</li>
+							<li class="remark">
+								<span class="remarkLocal">
+							&nbsp;&nbsp;备&nbsp;&nbsp;注：
+						</span>
+								<textarea name="remark" cols="40" rows="10"></textarea>
+							</li>
+							<li class="checkItem">
+								<input type="checkBox" value="checkItem" name="checkItem" id="checkAgreement" onclick="isaccepted()" onblur="isaccepted()" /> 我已阅读并同意遵守
+								<a href="https://kyfw.12306.cn/otn/regist/rule" target="_blank">《中国铁路客户服务中心网站服务条款》
+								</a>
+								<script type="text/javascript" src="../js/checkNextStep.js"></script>
+							</li>
+							<li class="nextStep">
+								<button type="button" onclick="signUpTest()" disabled="disabled" name="nextStep" value="nextStep" class="nextStepStyle" id="nextStep">
+							<font size = "3" style = "color:white;padding-top: 1px;">
+								下一步
+							</font>
+						</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="foot"></div>
+	</body>
+
+</html>
