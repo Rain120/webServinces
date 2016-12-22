@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" type="text/css" href="./favicon.ico">
+		<title>12306</title>
+		<script type="text/javascript" src="../js/f_validata.js"></script>
+	</head>
+	<body onload="setInfo()">
+		<table width="933" border="0" align="center" cellpadding="0" cellspacing="0" style="margin:190px auto;">
+			<tr>
+				<td height="412" valign="top" background="../img/login_bg.jpg">
+					<table height="100" border="0" cellspacing="0">
+						<tr>
+							<td width="540">&nbsp;</td>
+							<td height="130" colspan="6">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="5">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="5">&nbsp;</td>
+						</tr>
+						<tr>
+							<td rowspan="9">&nbsp;</td>
+							<td width="98" height="20" align="right"><img src="../img/text_yh.gif" width="60" height="18"></td>
+							<td width="16">&nbsp;</td>
+							<td width="136">
+								<!-- placeholder = "请输入邮箱/手机号"  -->
+								<input name="username" type="text" id="username" size="18" id="username" placeholder = "请输入邮箱/手机号" onFocus="clickInfo()" onblur="saveInfo()" />
+							</td>
+							<td width="50">&nbsp;</td>
+							<td colspan="2">&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td height="20" align="right"><img src="../img/text_password.gif" width="60" height="18"></td>
+							<td>&nbsp;</td>
+							<td>
+								<input name="password" type="password" size="18" id="password" placeholder="请输入密码" />
+							</td>
+							<td colspan="3">&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td height="20" align="right">
+								<img src="../img/text_yzm.gif" width="60" height="18">
+							</td>
+							<td>&nbsp;</td>
+							<td>
+								<input name="codeidefient" type="text" size="18" />
+							</td>
+							<td>
+								<span class="text_cray1">
+										<img src="../img/yzm.bmp" alt="" height="20" />
+									</span>
+							</td>
+							<td>
+								<img src="../img/text_sx.gif" width="32" height="18">
+							</td>
+							<td align="left">&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td height="30">&nbsp;</td>
+							<td>&nbsp;</td>
+							<td valign="bottom">
+								<table width="100%" border="0" cellspacing="0">
+									<tr>
+										<td width="26" align="left"><input name="checkbox" type="checkbox" value="checkbox" style=" margin:0 auto;" /></td>
+										<td width="170"><img src="../img/text_zddl.gif" width="60" height="18"></td>
+									</tr>
+								</table>
+							</td>
+							<td colspan="3">&nbsp;</td>
+						</tr>
+						<tr>
+							<td height="20">&nbsp;</td>
+							<td>&nbsp;</td>
+							<td colspan="2">
+								<table width="200" border="0" cellspacing="0">
+									<tr>
+										<td>
+											<input name="button" type="button" class="butlogin" id="button" value="登录" onClick="f_validata()">
+										</td>
+										<td>
+											<input name="button2" type="button" class="butzc" id="button2" value="注册" onClick="UserRegistration()">
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td colspan="2">&nbsp;</td>
+						</tr>
+						<tr></tr>
+					</table>
+				</td>
+			</tr>
+			<tr></tr>
+		</table>
+	</body>
+
+</html>
