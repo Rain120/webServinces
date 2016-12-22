@@ -1,4 +1,4 @@
-package com.neuedu.dao;
+package com.servince.dao;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -12,11 +12,11 @@ import oracle.net.ano.Service;
 
 import org.apache.tomcat.util.digester.SetRootRule;
 
-import com.neuedu.model.CertType;
-import com.neuedu.model.City;
-import com.neuedu.model.Province;
-import com.neuedu.model.User;
-import com.neuedu.model.UserType;
+import com.servince.model.CertType;
+import com.servince.model.City;
+import com.servince.model.Province;
+import com.servince.model.User;
+import com.servince.model.UserType;
 
 public class UserDAOImp implements UserDAO {
 	private static Connection conn;
