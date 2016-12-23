@@ -1,4 +1,4 @@
-package com.servince.dao;
+package com.service.dao;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -12,11 +12,11 @@ import oracle.net.ano.Service;
 
 import org.apache.tomcat.util.digester.SetRootRule;
 
-import com.servince.model.CertType;
-import com.servince.model.City;
-import com.servince.model.Province;
-import com.servince.model.User;
-import com.servince.model.UserType;
+import com.neuedu.model.CertType;
+import com.neuedu.model.City;
+import com.neuedu.model.Province;
+import com.neuedu.model.User;
+import com.neuedu.model.UserType;
 
 public class UserDAOImp implements UserDAO {
 	private static Connection conn;
@@ -152,72 +152,109 @@ public class UserDAOImp implements UserDAO {
 		PreparedStatement ps = null;
 		ResultSet result = null;
 		try {
+			int flag =1;
 			StringBuffer sql_sb = new StringBuffer();
 			sql_sb.append ("select t_user.*,ct.content certtype,ut.content usertype ");
 			sql_sb.append (" from tab_user t_user,tab_certtype ct,tab_usertype ut ");
 			sql_sb.append ( "  where t_user.cert_type = ct.id and t_user.user_type = ut.id ");
 			sql_sb.append (" and t_user.status = 1");
 			
-			if (user.getRealname() != null){
-				sql_sb.append(" and t_user.realname = ?");
+			if (0 != user.getId()){
+				sql_sb.append(" and id = ?");
 			}
-			if (user.getSex() != null){
-				sql_sb.append(" and t_user.sex = ?");
+			if(null != user.getUsername() && !"".equals(user.getUsername()) ){
+				sql_sb.append(" and username = ?");
 			}
-			if(user.getCert_type() != null){
-					sql_sb.append(" and t_user.cert_type = ?");
+			if (null != user.getRule() &&!"".equals(user.getRule()) ){
+				sql_sb.append(" and rule = ?");
 			}
-			if(user.getCert() != null) {
-				sql_sb.append(" and t_user.cert = ?");
+			if (null != user.getRealname() && !"".equals(user.getRealname() )){
+				sql_sb.append(" and realname = ?");
 			}
-			if(user.getUser_type() != null){
-					sql_sb.append(" and t_user.user_type = ?");
+			if (null != user.getSex() && !"".equals(user.getSex()) ){
+				sql_sb.append(" and sex = ?");
+			}
+			if(null != user.getCert_type() && !"".equals(user.getCert_type()) ){
+				if(null != user.getCert_type().getContent() && 0 != user.getCert_type().getId() ){
+					sql_sb.append(" and ct.content = ?");
+				}
+			}
+			if(null != user.getCert() &&!"".equals(user.getCert()) ) {
+				sql_sb.append(" and cert = ?");
+			}
+			if(null != user.getUser_type() && !"".equals(user.getUser_type() )){
+				if(null != user.getUser_type().getContent() && 0 != user.getUser_type().getId() ){
+					sql_sb.append(" and ut.content = ?");
+				}
 			}
 			
 			ps = conn.prepareStatement(sql_sb.toString());
-			int flag =1;
-			if (user.getRealname() != null){
+			if (0 != user.getId()){
+				ps.setInt(flag++, user.getId());
+			}
+			if(null != user.getUsername() && !"".equals(user.getUsername()) ){
+				ps.setString(flag++, user.getUsername());
+			}
+			if (null != user.getRule() &&!"".equals(user.getRule()) ){
+				ps.setString(flag++, user.getRule());
+			}
+			if(null != user.getUsername() && !"".equals(user.getUsername()) ){
 				ps.setString(flag++, user.getRealname());
 			}
-			if (user.getSex() != null){
+			if (null != user.getSex() && !"".equals(user.getSex()) ){
 				ps.setString(flag++, user.getSex());
 			}
-			if (user.getCert_type() != null){
-					ps.setInt(flag++, user.getCert_type().getId());
+			if(null != user.getCert_type() && !"".equals(user.getCert_type()) ){
+				if(null != user.getCert_type().getContent() && 0 != user.getCert_type().getId() ){
+					ps.setString(flag++, user.getCert_type().getContent());
+				}
+//				ps.setInt(flag++, user.getCert_type().getId());
 			}
-			if (user.getCert() != null){
+			if(null != user.getCert() &&!"".equals(user.getCert()) ) {
 				ps.setString(flag++, user.getCert());
 			}
-			if (user.getUser_type() != null){
-					ps.setInt(flag++, user.getUser_type().getId());
+			if(null != user.getUser_type() && !"".equals(user.getUser_type() )){
+				if(null != user.getUser_type().getContent() && 0 != user.getUser_type().getId() ){
+					ps.setString(flag++, user.getUser_type().getContent());
+				}
+//				ps.setInt(flag++, user.getUser_type().getId());
 			}
 			
 			result = ps.executeQuery();
+			
 			while (result.next()) {
-				user.setUsername(result.getString("username"));
-				user.setRealname(result.getString("realname"));
-				user.setSex(result.getString("sex"));
+				User userList = new User();
+				userList.setId(result.getInt("id"));
+				userList.setUsername(result.getString("username"));
+				userList.setPassword(result.getString("password"));
+				userList.setRule(result.getString("rule"));
+				userList.setRealname(result.getString("realname"));
+				userList.setSex(result.getString("sex"));
 				
 				CertType certty = new CertType();
 				certty.setContent(result.getString("certtype"));
-				user.setCert_type(certty);
+				userList.setCert_type(certty);
 				
-				user.setCert(result.getString("cert"));		
-				user.setBirthday(result.getDate("birthday"));
+				userList.setCert(result.getString("cert"));		
+				userList.setBirthday(result.getDate("birthday"));
 				
 				UserType userty = new UserType();
 				userty.setContent(result.getString("usertype"));
-				user.setUser_type(userty);
+				userList.setUser_type(userty);
 				
-				System.out.println("Select end!");
-				listUser.add(user);
+				userList.setContent(result.getString("content"));
+				userList.setStatus(result.getString("status"));
+				userList.setLogin_ip(result.getString("login_ip"));
+				userList.setImage_path(result.getString("image_path"));
+				
+				listUser.add(userList);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
 			try {
 				if (result != null) {
-					result.close();
+				result.close();
 				}
 				if (ps != null) {
 					ps.close();
@@ -225,10 +262,9 @@ public class UserDAOImp implements UserDAO {
 				if (conn != null) {
 					conn.close();
 				}
-				System.out.println("DateBase Close!");
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}
+			} 
 		}
 		return listUser;
 	}
