@@ -1,5 +1,5 @@
 <table align = "left">
-    <tr> 市信息表(tab_certtype)</tr>
+    <tr>市信息表（tab_city）</tr>
     <tr>
       <td>字段名</td><td>字段类型</td><td>是否可为空</td><td>默认值</td><td>字段含义</td><td>注释</td>
     </tr>
