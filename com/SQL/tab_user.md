@@ -1,52 +1,52 @@
-<table algin = "left>
-    <tr algin = "left>"用户表（tab_user）</tr>					
+<table algin = "left">
+    <tr algin = "left">用户表（tab_user） </tr>					
     <tr>
-      <td>字段名</td><td>字段类型</td><td>是否可为空</td><td>默认值</td><td>字段含义</td><td>注释</td>
+          <td>字段名</td><td>字段类型</td><td>是否可为空</td><td>默认值</td><td>字段含义</td><td>注释</td>
     </tr>
     <tr>
-      <td>id</td><td>number(4)</td><td>N</td><td></td><td></td><td>主键</td>
+          <td>id</td><td>number(4)</td><td>N</td><td></td><td></td><td>主键</td>
     </tr>
     <tr>
-      <td>username</td><td>VARCHAR2(30)</td><td>N</td><td></td><td>用户名</td><td>唯一</td>
+          <td>username</td><td>VARCHAR2(30)</td><td>N</td><td></td><td>用户名</td><td>唯一</td>
     </tr>
     <tr>
-      <td>password</td><td>VARCHAR2(50)</td><td>N</td><td></td><td></td><td>密码</td><td></td>	
+          <td>password</td><td>VARCHAR2(50)</td><td>N</td><td></td><td></td><td>密码</td><td></td>	
     </tr>
     <tr>
-      <td>rule</td><td>VARCHAR2(2)</td><td>N</td><td>2</td><td>权限(1、管理员 2、普通用户)</td><td></td>	
+          <td>rule</td><td>VARCHAR2(2)</td><td>N</td><td>2</td><td>权限(1、管理员 2、普通用户)</td><td></td>	
     </tr>
     <tr>
-    realname	VARCHAR2(50)	N		真实姓名	
+          <td>realname</td><td>VARCHAR2(50)</td><td>N</td><td></td><td>真实姓名</td><td></td>	
     </tr>
     <tr>
-    sex	VARCHAR2(10)	N	1	性别(1、男 2、女)	
+          <td>sex</td><td>VARCHAR2(10)</td><td>N</td><td>1</td><td>性别(1、男 2、女)</td><td></td>	
     </tr>
     <tr>
-    city	VARCHAR2(6)	N		市信息ID值	关联tab_city表cityID字段
+         <td>city</td><td>VARCHAR2(6)</td><td>N</td><td></td><td>市信息ID值</td><td>关联tab_city表cityID字段</td>
     </tr>
     <tr>
-    cert_type	number(4)	N		证件类型字典ID值	关联tab_certtype表id字段
+         <td>cert_type</td><td>number(4)</td><td>N</td><td></td><td>证件类型字典ID值</td><td>关联tab_certtype表id字段</td>
     </tr>
     <tr>
-    cert	VARCHAR2(50)	N		证件号码	
+         <td>cert</td><td>VARCHAR2(50)</td><td>N</td><td></td><td>证件号码</td><td></td>	
     </tr>
     <tr>
-    birthday	DATE	N		生日	
+        <td>birthday</td><td>DATE</td><td>N</td><td></td><td>生日</td><td></td>	
     </tr>
     <tr>
-    user_type	number(4)	Y		旅客类型字典ID值	关联tab_usertype表id字段
+        <td>user_type</td><td>number(4)</td><td>Y</td><td></td><td>旅客类型字典ID值</td><td>关联tab_usertype表id字段</td>
     </tr>
     <tr>
-    content	varchar2(3000)	Y		备注信息	
+        <td>content</td><td>varchar2(3000)</td><td>Y</td><td></td><td>备注信息</td><td></td>
     </tr>
     <tr>
-    status	VARCHAR2(2)	N	1	用户状态（0、无效  1、有效 ）	
+        <td>status</td><td>VARCHAR2(2)</td><td>N</td><td>1</td><td>用户状态（0、无效  1、有效 ）</td><td></td>	
     </tr>
     <tr>
-    login_ip	VARCHAR2(50)	Y		登录IP	
+        <td>login_ip</td><td>VARCHAR2(50)</td><td>Y</td><td></td><td>登录IP</td><td></td>	
     </tr>
     <tr>
-    image_path	VARCHAR2(200)	Y		用户头像路径	
+        <td>image_path</td><td>VARCHAR2(200)</td><td>Y</td><td></td><td>用户头像路径</td><td></td>	
     </tr>
     <tr>
 </table>
