@@ -1,5 +1,5 @@
 <table align = "left">
-    <tr>旅客类型字典表(tab_certtype)</tr>
+    <tr>省信息表（tab_province）</tr>
     <tr>
       <td>字段名</td><td>字段类型</td><td>是否可为空</td><td>默认值</td><td>字段含义</td><td>注释</td>
     </tr>
