@@ -22,10 +22,10 @@
           <td>sex</td><td>VARCHAR2(10)</td><td>N</td><td>1</td><td>性别(1、男 2、女)</td><td></td>	
     </tr>
     <tr>
-         <td>city</td><td>VARCHAR2(6)</td><td>N</td><td></td><td>市信息ID值</td><td>关联tab_city表cityID字段</td>
+         <td>city</td><td>VARCHAR2(6)</td><td>N</td><td></td><td>市信息ID值</td><td>关联<a href="https://github.com/Rain120/webServinces/blob/master/com/SQL/tab_city.md" target="_blank">tab_city</a>表cityID字段</td>
     </tr>
     <tr>
-         <td>cert_type</td><td>number(4)</td><td>N</td><td></td><td>证件类型字典ID值</td><td>关联tab_certtype表id字段</td>
+         <td>cert_type</td><td>number(4)</td><td>N</td><td></td><td>证件类型字典ID值</td><td>关联<a href="https://github.com/Rain120/webServinces/blob/master/com/SQL/tab_certtype.md" target="_blank">tab_certtype</a>表id字段</td>
     </tr>
     <tr>
          <td>cert</td><td>VARCHAR2(50)</td><td>N</td><td></td><td>证件号码</td><td></td>	
@@ -34,7 +34,7 @@
         <td>birthday</td><td>DATE</td><td>N</td><td></td><td>生日</td><td></td>	
     </tr>
     <tr>
-        <td>user_type</td><td>number(4)</td><td>Y</td><td></td><td>旅客类型字典ID值</td><td>关联tab_usertype表id字段</td>
+        <td>user_type</td><td>number(4)</td><td>Y</td><td></td><td>旅客类型字典ID值</td><td>关联<a href="https://github.com/Rain120/webServinces/blob/master/com/SQL/tab_usertype.md" target="_blank">tab_usertype</a>表id字段</td>
     </tr>
     <tr>
         <td>content</td><td>varchar2(3000)</td><td>Y</td><td></td><td>备注信息</td><td></td>
