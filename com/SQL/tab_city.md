@@ -13,6 +13,6 @@
         <td>city</td><td>VARCHAR2(50)</td><td>Y</td><td></td><td>市名称</td><td></td>
     </tr>
     <tr>
-        <td>fathe</td><td>VARCHAR2(6)</td><td>Y</td><td></td><td>省份标识</td><td>关联tab_province表provinceID字段</td>
+        <td>fathe</td><td>VARCHAR2(6)</td><td>Y</td><td></td><td>省份标识</td><td>关联<a href="https://github.com/Rain120/webServinces/blob/master/com/SQL/tab_province.md" target="_blank">tab_province</a>表provinceID字段</td>
     </tr>
 </table>
