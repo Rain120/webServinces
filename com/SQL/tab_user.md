@@ -4,13 +4,13 @@
           <td>字段名</td><td>字段类型</td><td>是否可为空</td><td>默认值</td><td>字段含义</td><td>注释</td>
     </tr>
     <tr>
-          <td>id</td><td>number(4)</td><td>N</td><td></td><td></td><td>主键</td>
+          <td>id</td><td>number(4)</td><td>N</td><td></td><td>ID</td><td>主键</td>
     </tr>
     <tr>
           <td>username</td><td>VARCHAR2(30)</td><td>N</td><td></td><td>用户名</td><td>唯一</td>
     </tr>
     <tr>
-          <td>password</td><td>VARCHAR2(50)</td><td>N</td><td></td><td></td><td>密码</td><td></td>	
+          <td>password</td><td>VARCHAR2(50)</td><td>N</td><td></td><td>密码</td><td></td>	
     </tr>
     <tr>
           <td>rule</td><td>VARCHAR2(2)</td><td>N</td><td>2</td><td>权限(1、管理员 2、普通用户)</td><td></td>	
