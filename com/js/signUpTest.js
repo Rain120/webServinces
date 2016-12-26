@@ -95,7 +95,8 @@ function signUpTest() {
 	}
 	
 	if(error == "") {
-		window.location.href = "top.html";
+		//window.location.href = "top.html";
+		document.forms[0].submit();
 	} else {
 		alert(error);
 	}
