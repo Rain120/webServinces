@@ -30,4 +30,11 @@ HTML + CSS + JavaScript + Java + SQL + Servlet
         <a href="https://github.com/Rain120/webServinces/tree/master/com/servince/control/RegisterServlet.java">RegisterServlet</a>         Servlet实现注册信息的获取(当前只是单纯获取注册用户名和密码，正在实现其他功能属性)<br />
     </td>
   </tr>
+  <tr>
+    <td align = "center">2016-12-27</td>
+    <td align = "center">4</td>
+    <td align = "left">
+        <a href="https://github.com/Rain120/webServinces/tree/master/com/servince/control/RegisterServlet.java">RegisterServlet</a>         Servlet实现注册信息的获取(已实现)<br />
+    </td>
+  </tr>
 </table>
