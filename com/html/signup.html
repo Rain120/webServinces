@@ -4,9 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <title>signup</title>
-<link rel="stylesheet" href="../css/css.css" />
-<script type="text/javascript" src="../js/Calendar.js"></script>
-<script type="text/javascript" src="../js/signUpTest.js"></script>
+<link rel="stylesheet" href="./css/css.css" />
+<script type="text/javascript" src="./js/Calendar.js"></script>
+<script type="text/javascript" src="./js/signUpTest.js"></script>
 <script type="text/javascript">
 	var cal = new Calendar("cal");
 	document.write(cal);
@@ -54,7 +54,7 @@
 								</table> <script type="text/javascript" src="../js/judgePWD.js"></script>
 							</li>
 							<li class="comfirmPasswd"><span class="star">*</span> 确认密码：
-								<input type="text" id="comfirmPWD" name="password"
+								<input type="text" id="comfirmPWD" name="comfirmPasswd"
 								style="width: 200px; height: 30px;" placeholder="再次输入您的登录密码">
 							</li>
 							<li class="detail"><span class="detailInfo">详细信息：</span></li>
@@ -71,15 +71,15 @@
 								id="male" value="0" checked="checked" />男 <input type="radio"
 								name="sex" id="female" value="1" />女</li>
 							<li class="cityCheck"><span class="star">*</span>
-								&nbsp;&nbsp;省&nbsp;&nbsp;份： <select id="province"
-								style="width: 100px; height: 30px;"
+								&nbsp;&nbsp;省&nbsp;&nbsp;份： <select name="province"
+								id="province" style="width: 100px; height: 30px;"
 								onchange="selectprovince(this);">
 									<option value="请选择省份">请选择省份</option>
 									<!--<option value="广东">广东</option>
 									<option value="江西">江西</option>
 									<option value="福建">福建</option>
 									<option value="湖南">湖南</option>-->
-							</select> 城 市： <select id="city" runat="server"
+							</select> 城 市： <select name="citys" id="city" runat="server"
 								style="width: 100px; height: 30px;">
 									<option value="请选择城市">请选择城市</option>
 									<!--<option value="南昌">南昌</option>
@@ -90,27 +90,27 @@
 								<script type="text/javascript" language="JavaScript"
 									src="../js/province2city.js"></script></li>
 							<li class="IDType"><span class="star">*</span> 证件类型： <select
-								style="width: 200px; height: 30px;" id="IDType">
-									<option value="二代身份证">二代身份证</option>
-									<option value="护照">护照</option>
-									<option value="港澳通行证">港澳通行证</option>
-									<option value="台湾通行证">台湾通行证</option>
+								style="width: 200px; height: 30px;" id="IDType" name="certtype">
+									<option value="1">二代身份证</option>
+									<option value="2">护照</option>
+									<option value="3">港澳通行证</option>
+									<option value="4">台湾通行证</option>
 							</select></li>
 							<li class="IDNumber"><span class="star">*</span> 证件号码： <input
-								type="text" id="IDNumber" name="IDNumber"
+								type="text" id="IDNumber" name="cert"
 								style="width: 200px; height: 30px;" placeholder="请输入您的证件号码">
 							</li>
 							<li class="bornNumber"><span class="star">*</span> 出生日期： <input
-								type="text" id="calendar" name="bornNumber"
+								type="text" id="calendar" name="birthday"
 								style="width: 200px; height: 30px;" placeholder="请输入您的出生日期"
 								onfocus="cal.show(this)"
 								onclick="cal.show(this,cal,getObjById('calendar'))"></li>
 							<li class="VisitorType"><span class="star">*</span> 用户类型： <select
-								style="width: 200px; height: 30px;">
-									<option value="成人">成人</option>
-									<option value="儿童">儿童</option>
-									<option value="学生">学生</option>
-									<option value="残疾军人、伤残人民警察">残疾军人、伤残人民警察</option>
+								style="width: 200px; height: 30px;" name="usertype">
+									<option value="1">成人</option>
+									<option value="2">儿童</option>
+									<option value="3">学生</option>
+									<option value="4">残疾军人、伤残人民警察</option>
 							</select></li>
 							<li class="remark"><span class="remarkLocal">
 									&nbsp;&nbsp;备&nbsp;&nbsp;注： </span> <textarea name="remark" cols="40"
@@ -122,9 +122,9 @@
 							</a> <script type="text/javascript" src="../js/checkNextStep.js"></script>
 							</li>
 							<li class="nextStep">
-								<button type="button" onclick="signUpTest()" disabled="disabled"
-									name="nextStep" value="nextStep" class="nextStepStyle"
-									id="nextStep">
+								<button type="submit" disabled="disabled" name="nextStep"
+									value="nextStep" class="nextStepStyle" id="nextStep">
+									<!--  onclick="signUpTest()" -->
 									<font size="3" style="color: white; padding-top: 1px;">
 										下一步 </font>
 								</button>
