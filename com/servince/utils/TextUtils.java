@@ -1,4 +1,4 @@
-package com.neuedu.utils;
+package com.servince.utils;
 
 public class TextUtils {
 	public static boolean isEmpty(String str){
