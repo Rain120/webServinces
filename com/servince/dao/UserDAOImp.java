@@ -12,11 +12,11 @@ import oracle.net.ano.Service;
 
 import org.apache.tomcat.util.digester.SetRootRule;
 
-import com.neuedu.model.CertType;
-import com.neuedu.model.City;
-import com.neuedu.model.Province;
-import com.neuedu.model.User;
-import com.neuedu.model.UserType;
+import com.service.model.CertType;
+import com.service.model.City;
+import com.service.model.Province;
+import com.service.model.User;
+import com.service.model.UserType;
 
 public class UserDAOImp implements UserDAO {
 	private static Connection conn;
